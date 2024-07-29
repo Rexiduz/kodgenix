@@ -13,13 +13,21 @@ const Projects = () => {
       <div className="h-full w-full flex flex-col md:flex-row gap-10 px-10">
         <ProjectCard
           src="/zqcargo.png"
+          href="https://zq-cargo.com"
           title="ZQ Cargo"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          description={
+            'ZQ Cargo is a Logistics Business Website & Web Application ' +
+            'that streamlines shipping and transportation services. ' +
+            'It offers users an efficient platform to manage and track their logistics operations seamlessly.'
+          }
         />
         <ProjectCard
           src="/portfolio.png"
-          title="Portfolio"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          title="KodGenix"
+          description={
+            'KodGenix is a Static Portfolio Website designed to showcase professional skills and projects. ' +
+            'It provides a clean and visually appealing way for users to present their work and achievements.'
+          }
         />
       </div>
     </div>

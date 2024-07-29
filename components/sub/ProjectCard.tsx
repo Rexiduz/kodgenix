@@ -1,15 +1,20 @@
-import Image from "next/image";
-import React from "react";
+import Image from 'next/image'
+import React, { ReactNode } from 'react'
 
 interface Props {
-  src: string;
-  title: string;
-  description: string;
+  src: string
+  title: string
+  description: ReactNode
+  href?: string
 }
 
-const ProjectCard = ({ src, title, description }: Props) => {
+const ProjectCard = ({ src, title, href = '#', description }: Props) => {
   return (
-    <div className="relative overflow-hidden rounded-lg shadow-lg border border-[#2A0E61]">
+    <a
+      className="relative overflow-hidden rounded-lg shadow-lg border border-[#2A0E61]"
+      href={href}
+      target={href === '#' ? '_top' : '_blank'}
+    >
       <Image
         src={src}
         alt={title}
@@ -20,10 +25,10 @@ const ProjectCard = ({ src, title, description }: Props) => {
 
       <div className="relative p-4">
         <h1 className="text-2xl font-semibold text-white">{title}</h1>
-        <p className="mt-2 text-gray-300">{description}</p>
+        <div className="mt-2 text-gray-300">{description}</div>
       </div>
-    </div>
-  );
-};
+    </a>
+  )
+}
 
-export default ProjectCard;
+export default ProjectCard
