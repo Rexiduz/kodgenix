@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'KodGenix',
-  description: 'This is my portfolio'
+  description: "This is Songkit's portfolio"
 }
 
 export default function RootLayout({
