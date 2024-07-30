@@ -1,7 +1,7 @@
 import React from 'react'
-import Image from 'next/image'
 import { RxGithubLogo, RxLinkedinLogo } from 'react-icons/rx'
 import { MdOutlineEmail } from 'react-icons/md'
+import LogoSVG from './LogoSVG'
 
 const Navbar = () => {
   const {
@@ -16,18 +16,10 @@ const Navbar = () => {
       <div className="w-full h-full flex flex-row items-center justify-between m-auto px-0 lg:px-[10px]">
         <a
           href="#about-me"
-          className="h-auto w-auto flex-row items-center hidden md:flex"
+          className="h-auto w-auto flex-row items-center hidden md:flex text-white"
         >
-          <Image
-            src="/NavLogo.png"
-            alt="logo"
-            width={70}
-            height={70}
-            className="cursor-pointer hover:animate-slowspin"
-          />
-          <span className="font-bold text-gray-300">{appName}</span>
+          <LogoSVG />
         </a>
-
         <div className="w-[500px] h-full flex flex-row items-center justify-between ml-0 md:ml-8 lg:ml-0">
           <div className="flex items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
             <a href="#about-me" className="cursor-pointer">
