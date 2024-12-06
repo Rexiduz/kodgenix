@@ -1,5 +1,9 @@
+'use client'
+
 import Image from 'next/image'
 import React, { ReactNode } from 'react'
+import { Typography } from 'antd'
+import clsx from '@/utils/clsx'
 
 interface Props {
   src: string
@@ -10,24 +14,28 @@ interface Props {
 
 const ProjectCard = ({ src, title, href = '#', description }: Props) => {
   return (
-    <a
-      className="relative overflow-hidden rounded-lg shadow-lg border border-[#2A0E61]"
-      href={href}
-      target={href === '#' ? '_top' : '_blank'}
+    <div
+      className={clsx(
+        'rounded-lg shadow-lg mb-4',
+        'relative overflow-hidden',
+        'border border-solid border-[#2A0E61]'
+      )}
     >
-      <Image
-        src={src}
-        alt={title}
-        width={1000}
-        height={1000}
-        className="w-full object-contain"
-      />
-
+      <a href={href} target={href === '#' ? '_top' : '_blank'}>
+        <div className="relative w-full h-[240px]">
+          <Image fill src={src} alt={title} objectFit="cover" />
+        </div>
+      </a>
       <div className="relative p-4">
         <h1 className="text-2xl font-semibold text-white">{title}</h1>
-        <div className="mt-2 text-gray-300">{description}</div>
+        <Typography.Paragraph
+          style={{ color: 'white' }}
+          ellipsis={{ rows: 3, expandable: true, symbol: 'more' }}
+        >
+          {description}
+        </Typography.Paragraph>
       </div>
-    </a>
+    </div>
   )
 }
 

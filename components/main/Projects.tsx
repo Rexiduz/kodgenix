@@ -1,7 +1,15 @@
-import React from 'react'
+'use client'
+
+import { useResponsiveValue } from '@/utils/hooks'
 import ProjectCard from '../sub/ProjectCard'
+import { Col, Row } from 'antd'
 
 const Projects = () => {
+  const [gutter, span] = useResponsiveValue([0, 24], {
+    640: [16, 12],
+    1024: [16, 24 / 3]
+  })
+
   return (
     <div
       className="flex flex-col items-center justify-center py-20"
@@ -10,25 +18,42 @@ const Projects = () => {
       <h1 className="text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-20">
         My Projects
       </h1>
-      <div className="h-full w-full flex flex-col md:flex-row gap-10 px-10">
-        <ProjectCard
-          src="/zqcargo.png"
-          href="https://zq-cargo.com"
-          title="ZQ Cargo"
-          description={
-            'ZQ Cargo is a Logistics Business Website & Web Application ' +
-            'that streamlines shipping and transportation services. ' +
-            'It offers users an efficient platform to manage and track their logistics operations seamlessly.'
-          }
-        />
-        <ProjectCard
-          src="/portfolio.png"
-          title="KodGenix"
-          description={
-            'KodGenix is a Static Portfolio Website designed to showcase professional skills and projects. ' +
-            'It provides a clean and visually appealing way for users to present their work and achievements.'
-          }
-        />
+      <div className="px-10">
+        <Row gutter={gutter}>
+          <Col span={span}>
+            <ProjectCard
+              src="/zqcargo.png"
+              href="https://zq-cargo.com"
+              title="ZQ Cargo"
+              description={
+                'ZQ Cargo is a Logistics Business Website & Web Application ' +
+                'that streamlines shipping and transportation services. ' +
+                'It offers users an efficient platform to manage and track their logistics operations seamlessly.'
+              }
+            />
+          </Col>
+          <Col span={span}>
+            <ProjectCard
+              src="/siwaporn-houses.png"
+              title="Siwaporn Houses"
+              href="https://siwaporn-houses.netlify.app/"
+              description={
+                'Siwaporn Houses specializes in designing and delivering custom-built and pre-fabricated modular homes. ' +
+                'With efficient home delivery services, the company meets the needs of individuals seeking fast and hassle-free housing solutions.'
+              }
+            />
+          </Col>
+          <Col span={span}>
+            <ProjectCard
+              src="/portfolio.png"
+              title="KodGenix"
+              description={
+                'KodGenix is a Static Portfolio Website designed to showcase professional skills and projects. ' +
+                'It provides a clean and visually appealing way for users to present their work and achievements.'
+              }
+            />
+          </Col>
+        </Row>
       </div>
     </div>
   )
