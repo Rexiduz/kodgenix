@@ -23,10 +23,16 @@ const ProjectCard = ({ src, title, href = '#', description }: Props) => {
     >
       <a href={href} target={href === '#' ? '_top' : '_blank'}>
         <div className="relative w-full h-[240px]">
-          <Image fill src={src} alt={title} objectFit="cover" />
+          <Image
+            fill
+            src={src}
+            alt={title}
+            objectFit="cover"
+            objectPosition="center top"
+          />
         </div>
       </a>
-      <div className="relative p-4">
+      <div className="relative p-4 min-h-[144px]">
         <h1 className="text-2xl font-semibold text-white">{title}</h1>
         <Typography.Paragraph
           style={{ color: 'white' }}

@@ -6,8 +6,8 @@ import { Col, Row } from 'antd'
 
 const Projects = () => {
   const [gutter, span] = useResponsiveValue([0, 24], {
-    640: [16, 12],
-    1024: [16, 24 / 3]
+    768: [16, 12],
+    1200: [16, 24 / 4]
   })
 
   return (
@@ -41,6 +41,14 @@ const Projects = () => {
                 'Siwaporn Houses specializes in designing and delivering custom-built and pre-fabricated modular homes. ' +
                 'With efficient home delivery services, the company meets the needs of individuals seeking fast and hassle-free housing solutions.'
               }
+            />
+          </Col>
+          <Col span={span}>
+            <ProjectCard
+              src="/fbcms.png"
+              title="FB CMS"
+              href="https://fbcms.netlify.app/"
+              description="Cloned Facebook Feed for demo CMS single page application"
             />
           </Col>
           <Col span={span}>
