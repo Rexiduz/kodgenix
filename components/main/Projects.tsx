@@ -48,7 +48,10 @@ const Projects = () => {
               src="/fbcms.png"
               title="FB CMS"
               href="https://fbcms.netlify.app/"
-              description="Cloned Facebook Feed for demo CMS single page application"
+              description={
+                'The simplest CMS single-page application like Facebook. ' +
+                'Let\'s try with username: "demo@fbcms.com" and password: "P@ssword"'
+              }
             />
           </Col>
           <Col span={span}>
