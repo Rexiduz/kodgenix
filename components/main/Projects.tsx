@@ -56,6 +56,17 @@ const Projects = () => {
           </Col>
           <Col span={span}>
             <ProjectCard
+              src="/univest.png"
+              title="Univest"
+              description={
+                "Univest is a website that aggregates users' asset values in one place, simplifying the analysis of their current investment status. " +
+                'Investors who diversify their investments across multiple asset classes often spend considerable time analyzing their financial situation.' +
+                'Univest offers a safe, user-friendly, and empowering personal portfolio analysis tool that saves investors valuable time.'
+              }
+            />
+          </Col>
+          <Col span={span}>
+            <ProjectCard
               src="/portfolio.png"
               title="KodGenix"
               description={
