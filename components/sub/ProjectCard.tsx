@@ -10,13 +10,20 @@ interface Props {
   title: string
   description: ReactNode
   href?: string
+  imgCoverPosition?: string
 }
 
-const ProjectCard = ({ src, title, href = '#', description }: Props) => {
+const ProjectCard = ({
+  src,
+  title,
+  href = '#',
+  description,
+  imgCoverPosition = 'left top'
+}: Props) => {
   return (
     <div
       className={clsx(
-        'rounded-lg shadow-lg mb-4',
+        'rounded-lg shadow-lg',
         'relative overflow-hidden',
         'border border-solid border-[#2A0E61]'
       )}
@@ -28,18 +35,20 @@ const ProjectCard = ({ src, title, href = '#', description }: Props) => {
             src={src}
             alt={title}
             objectFit="cover"
-            objectPosition="center top"
+            objectPosition={imgCoverPosition}
           />
         </div>
       </a>
-      <div className="relative p-4 min-h-[144px]">
-        <h1 className="text-2xl font-semibold text-white">{title}</h1>
-        <Typography.Paragraph
-          style={{ color: 'white' }}
-          ellipsis={{ rows: 3, expandable: true, symbol: 'more' }}
-        >
-          {description}
-        </Typography.Paragraph>
+      <div className="relative p-4 h-[154px] flex flex-col overflow-hidden">
+        <h1 className="text-2xl font-semibold text-white mb-2">{title}</h1>
+        <div className="flex-1 overflow-auto">
+          <Typography.Paragraph
+            style={{ color: 'white' }}
+            ellipsis={{ rows: 3, expandable: true, symbol: 'more' }}
+          >
+            {description}
+          </Typography.Paragraph>
+        </div>
       </div>
     </div>
   )
